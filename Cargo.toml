@@ -1,0 +1,13 @@
+[package]
+authors = ["Messense Lv <messense@icloud.com>"]
+name = "is-minified-js"
+version = "0.1.0"
+
+[dependencies]
+might-be-minified = "0.2.1"
+
+[dependencies.pyo3]
+path = "../../../Projects/PyO3"
+
+[lib]
+crate-type = ["cdylib"]
