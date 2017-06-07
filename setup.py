@@ -34,7 +34,7 @@ tests_require = install_requires + ['pytest']
 
 setup(
     name='is-minified-js',
-    version='0.1.0',
+    version='0.1.1',
     description='Detecting minified javascript files',
     long_description='',
     license='MIT',
