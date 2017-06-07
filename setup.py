@@ -1,4 +1,5 @@
 import sys
+
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
 
@@ -34,7 +35,7 @@ tests_require = install_requires + ['pytest']
 setup(
     name='is-minified-js',
     version='0.1.0',
-    description='JSON',
+    description='Detecting minified javascript files',
     long_description='',
     license='MIT',
     classifiers=[
