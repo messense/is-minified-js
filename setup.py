@@ -1,3 +1,4 @@
+import os
 import sys
 
 from setuptools import setup
@@ -31,12 +32,18 @@ setup_requires = ['setuptools-rust>=0.6.0']
 install_requires = []
 tests_require = install_requires + ['pytest']
 
+readme = 'README.md'
+if os.path.exists('README.rst'):
+    readme = 'README.rst'
+with open(readme) as f:
+    long_description = f.read()
+
 
 setup(
     name='is-minified-js',
     version='0.1.1',
     description='Detecting minified javascript files',
-    long_description='',
+    long_description=long_description,
     license='MIT',
     classifiers=[
         'License :: OSI Approved :: MIT License',
@@ -48,7 +55,6 @@ setup(
         'Programming Language :: Rust',
         'Operating System :: POSIX',
         'Operating System :: MacOS :: MacOS X',
-        'Topic :: Internet :: WWW/HTTP',
     ],
     author='Messense Lv',
     author_email='messense@icloud.com',
