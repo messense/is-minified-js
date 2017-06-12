@@ -1,9 +1,9 @@
-#[macro_use]
+#![feature(proc_macro)]
 extern crate pyo3;
 extern crate might_be_minified;
 
 use std::fs;
-use pyo3::{PyResult, Python, ToPyErr};
+use pyo3::{py, PyResult, Python, ToPyErr};
 use might_be_minified::analyze;
 
 
@@ -13,8 +13,9 @@ fn is_likely_minified(py: Python, path: &str) -> PyResult<bool> {
     Ok(res.is_likely_minified())
 }
 
-py_module_init!(is_minified_js, PyInit__is_minified_js, |py, m| {
+#[py::modinit(is_minified_js)]
+fn init_module(py: Python, m: &PyModule) {
     m.add(py, "__doc__", "Detecting minified javascript files")?;
     m.add(py, "is_likely_minified", py_fn!(py, is_likely_minified(path: &str)))?;
     Ok(())
-});
+}
