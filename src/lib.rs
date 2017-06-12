@@ -1,9 +1,9 @@
 #![feature(proc_macro)]
-extern crate pyo3;
+#![macro_use] extern crate pyo3;
 extern crate might_be_minified;
 
 use std::fs;
-use pyo3::{py, PyResult, Python, ToPyErr};
+use pyo3::{py, PyResult, Python, ToPyErr, PyModule};
 use might_be_minified::analyze;
 
 
