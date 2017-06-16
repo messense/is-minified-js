@@ -59,7 +59,7 @@ setup(
     author='Messense Lv',
     author_email='messense@icloud.com',
     packages=['is_minified_js'],
-    rust_extensions=[RustExtension('is_minified_js._is_minified_js', 'Cargo.toml', pyo3=True, debug=False)],
+    rust_extensions=[RustExtension('is_minified_js._is_minified_js', 'Cargo.toml')],
     install_requires=install_requires,
     tests_require=tests_require,
     setup_requires=setup_requires,
