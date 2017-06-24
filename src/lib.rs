@@ -7,9 +7,9 @@ use pyo3::{py, PyResult, Python, ToPyErr, PyModule};
 use might_be_minified::analyze;
 
 
+/// Detecting minified javascript files
 #[py::modinit(_is_minified_js)]
 fn init_module(py: Python, m: &PyModule) -> PyResult<()> {
-    m.add(py, "__doc__", "Detecting minified javascript files")?;
 
     #[pyfn(m, "is_likely_minified")]
     fn is_likely_minified(py: Python, path: String) -> PyResult<bool> {
