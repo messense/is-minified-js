@@ -5,10 +5,7 @@ version = "0.1.0"
 
 [dependencies]
 might-be-minified = "0.2.1"
-
-[dependencies.pyo3]
-# path = "../../../Projects/PyO3"
-git = "https://github.com/PyO3/PyO3.git"
+pyo3 = "0.1"
 
 [lib]
 crate-type = ["cdylib"]
