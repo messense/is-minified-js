@@ -1,3 +1,2 @@
 include MANIFEST.in LICENSE README.md Cargo.toml
-recursive-include is_minified_js *
 recursive-include src *
