@@ -41,7 +41,7 @@ with open(readme) as f:
 
 setup(
     name='is-minified-js',
-    version='0.1.1',
+    version='0.2.0',
     description='Detecting minified javascript files',
     long_description=long_description,
     license='MIT',
