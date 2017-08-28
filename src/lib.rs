@@ -3,7 +3,7 @@ extern crate pyo3;
 extern crate might_be_minified;
 
 use std::fs;
-use pyo3::{py, PyResult, Python, ToPyErr, PyModule};
+use pyo3::prelude::*;
 use might_be_minified::analyze;
 
 
@@ -12,8 +12,8 @@ use might_be_minified::analyze;
 fn init_module(py: Python, m: &PyModule) -> PyResult<()> {
 
     #[pyfn(m, "is_likely_minified")]
-    fn is_likely_minified(py: Python, path: String) -> PyResult<bool> {
-        let mut f = fs::File::open(path).map_err(|e| e.to_pyerr(py))?;
+    fn is_likely_minified(_py: Python, path: String) -> PyResult<bool> {
+        let mut f = fs::File::open(path)?;
         let res = analyze(&mut f);
         Ok(res.is_likely_minified())
     }
