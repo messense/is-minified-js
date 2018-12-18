@@ -1,0 +1,9 @@
+header = "/* c bindings to the is-minified-js library */"
+include_guard = "IS_MINIFIED_JS_H_INCLUDED"
+language = "C"
+
+[parse]
+expand = ["is-minified-js"]
+
+[enum]
+rename_variants = "QualifiedScreamingSnakeCase"

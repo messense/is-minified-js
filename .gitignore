@@ -65,3 +65,5 @@ docs/_build/
 
 # PyBuilder
 target/
+
+is_minified_js/_native*
