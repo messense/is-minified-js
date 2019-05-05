@@ -4,7 +4,7 @@ name = "is-minified-js"
 version = "0.2.0"
 
 [dependencies]
-might-be-minified = "0.2.1"
+might-be-minified = "0.3.0"
 
 [lib]
 crate-type = ["cdylib"]
