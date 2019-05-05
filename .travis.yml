@@ -9,9 +9,7 @@ sudo: required
 dist: trusty
 install:
   - python -c "import sysconfig; print('\n'.join(map(repr,sorted(sysconfig.get_config_vars().items()))))"
-  - mkdir ~/rust-installer
-  - curl -sL https://static.rust-lang.org/rustup.sh -o ~/rust-installer/rustup.sh
-  - sh ~/rust-installer/rustup.sh --prefix=~/rust --spec=$RUST_VERSION -y
+  - curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain=$RUST_VERSION
   - export PATH="$HOME/rust/bin:$PATH"
 script:
   - python setup.py develop
