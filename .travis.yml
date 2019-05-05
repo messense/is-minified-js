@@ -10,7 +10,5 @@ dist: trusty
 install:
   - curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain=$RUST_VERSION
   - export PATH="$HOME/rust/bin:$PATH"
-  - pip install milksnake
-  - cargo build --release
 script:
   - pip install -e .

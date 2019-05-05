@@ -50,7 +50,7 @@ setup(
     author_email='messense@icloud.com',
     packages=['is_minified_js'],
     setup_requires=['milksnake'],
-    install_requires=['cffi'],
+    install_requires=['cffi', 'milksnake'],
     milksnake_tasks=[
         build_native
     ],
